@@ -1,6 +1,6 @@
 # RiddleZolver
 
-Java application to solve two problems involving two bottles and a bathtub
+Java Spring Boot application to solve two problems involving two bottles and a bathtub
 
 ## Prerequisites: Java, git, mvn
 
