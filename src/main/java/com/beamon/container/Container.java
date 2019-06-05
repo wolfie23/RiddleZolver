@@ -1,6 +1,7 @@
 package com.beamon.container;
 
 import static com.beamon.container.ContainerType.BATHTUB;
+import static com.beamon.container.ContainerType.BOTTLE;
 
 public class Container {
     private int capacity;
@@ -14,38 +15,22 @@ public class Container {
     }
 
     public static Container Bathtub() {
-        return new Container(Integer.MAX_VALUE, 0, BATHTUB);
+        return new Container(Integer.MAX_VALUE, Integer.MAX_VALUE, BATHTUB);
     }
 
     public int getCapacity() {
-        if (BATHTUB.equals(this.getType())) {
-            return Integer.MAX_VALUE;
-        }
         return capacity;
     }
 
     public int getLevel() {
-        if (BATHTUB.equals(this.getType())) {
-            return Integer.MAX_VALUE;
-        }
         return level;
     }
 
     public void setLevel(int level) {
-        if (BATHTUB.equals(this.type)) {
-            this.level = Integer.MAX_VALUE;
-        } else {
+        if (BOTTLE.equals(this.type)) {
             level = level < 0 ? 0 : level;
             this.level = level > capacity ? capacity : level;
         }
-    }
-
-    public ContainerType getType() {
-        return type;
-    }
-
-    public void setType(ContainerType type) {
-        this.type = type;
     }
 
     public void empty() {
